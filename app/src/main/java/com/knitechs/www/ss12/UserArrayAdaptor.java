@@ -54,8 +54,8 @@ public class UserArrayAdaptor extends ArrayAdapter {
     //tempory
 
     public void addTempory(){
-        UserDetails usd= new UserDetails(super.getContext(),"Kolitha",R.drawable.p2p,"+947167556434");
-        UserDetails usd1= new UserDetails(super.getContext(),"Heshan",R.drawable.darr,"+94714522538");
+        UserDetails usd= new UserDetails(super.getContext(),"Sampath",R.drawable.img1,"+947167556434");
+        UserDetails usd1= new UserDetails(super.getContext(),"Heshan",R.drawable.img3,"+94714522538");
 
         add(usd);
         add(usd1);

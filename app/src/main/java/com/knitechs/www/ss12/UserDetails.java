@@ -17,7 +17,7 @@ public class UserDetails {
     public UserDetails(Context context,String name,int imageresouce,String mobile){
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),imageresouce);
         //crop
-        this.image = ImageConverter.getRoundedCornerBitmap(bitmap, 80);
+        this.image = ImageConverter.getRoundedCornerBitmap(bitmap, 200);
         this.name = name;
         this.context = context;
         this.mobile=mobile;
