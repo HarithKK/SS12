@@ -6,8 +6,9 @@
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="418dp"
         android:id="@+id/lstUsers"
-        android:layout_gravity="left|top"
-        android:choiceMode="singleChoice" />
+        android:layout_gravity="center_vertical|left"
+        android:choiceMode="singleChoice"
+        android:background="#ffffffff" />
 </FrameLayout>

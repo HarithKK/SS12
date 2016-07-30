@@ -1,10 +1,11 @@
 package com.knitechs.www.ss12;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.knitechs.www.ss12.util.SystemUiHider;
 
@@ -17,18 +18,30 @@ import com.knitechs.www.ss12.util.SystemUiHider;
  */
 public class UserList extends ActionBarActivity {
 
+    public static UserArrayAdaptor userArrayAdaptor;
+    ListView lstUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
-
         getSupportActionBar().hide();
 
-        ImageView img = (ImageView)findViewById(R.id.imageView);
-        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.p1);
-        Bitmap circularBitmap = ImageConverter.getRoundedCornerBitmap(bitmap, 100);
-        img.setImageBitmap(circularBitmap);
+        userArrayAdaptor = new UserArrayAdaptor(getApplicationContext(),R.layout.user_view_box);
+        userArrayAdaptor.addTempory();
+        lstUsers =(ListView)findViewById(R.id.lstUsers);
+        lstUsers.setAdapter(userArrayAdaptor);
+
+        lstUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(UserList.this,UserAccountView.class);
+                intent.putExtra("UID",position);
+
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
