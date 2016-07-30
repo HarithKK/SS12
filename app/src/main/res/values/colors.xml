@@ -3,4 +3,5 @@
     <color name="black_overlay">#66000000</color>
 
     <color name="background">#fffffefc</color>
+    <color name="prog" >#ffff2795</color>
 </resources>

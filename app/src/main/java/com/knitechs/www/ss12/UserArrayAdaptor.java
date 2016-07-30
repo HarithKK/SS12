@@ -43,19 +43,20 @@ public class UserArrayAdaptor extends ArrayAdapter {
 
         ImageView img = (ImageView) row.findViewById(R.id.icon_user);
         TextView name = (TextView)row.findViewById(R.id.txtusername);
+        TextView dist = (TextView)row.findViewById(R.id.txtdistance);
         // user details
         UserDetails userDetails = (UserDetails)this.userDetailsList.get(position);
         img.setImageBitmap(userDetails.getImage());
         name.setText(userDetails.getName());
-
+        dist.setText(userDetails.getDiatanceString()+" Km away from you");
         return row;
     }
 
     //tempory
 
     public void addTempory(){
-        UserDetails usd= new UserDetails(super.getContext(),"Sampath",R.drawable.img1,"+947167556434");
-        UserDetails usd1= new UserDetails(super.getContext(),"Heshan",R.drawable.img3,"+94714522538");
+        UserDetails usd= new UserDetails(super.getContext(),"Kalana Sampath",R.drawable.img5,"+947167556434","24/3,piliyandala","14");
+        UserDetails usd1= new UserDetails(super.getContext(),"Yasas Sri",R.drawable.img6,"+94714522538","Kadawatha","10");
 
         add(usd);
         add(usd1);
