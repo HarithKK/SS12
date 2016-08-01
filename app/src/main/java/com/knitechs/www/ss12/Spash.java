@@ -2,6 +2,8 @@ package com.knitechs.www.ss12;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -39,6 +41,15 @@ public class Spash extends ActionBarActivity {
                     break;
                 }
                 progressBar.setProgress(progressBar.getProgress()+1);
+
+                // check network
+                if(progressBar.getProgress() == 30){
+                    if(!isNetworkAvailable()){
+                        System.exit(0);
+                    }
+                }
+
+
                 try{
                     Thread.sleep(10);
                 }catch(Exception e){
@@ -69,5 +80,12 @@ public class Spash extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(getApplicationContext().CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

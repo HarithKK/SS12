@@ -68,7 +68,7 @@ public class UserAccountView extends ActionBarActivity {
         animationDrawable.addFrame(getResources().getDrawable(R.drawable.ring4),ANIMATION_DURATION);
 
         cmdRing.setBackgroundDrawable(animationDrawable);
-        animationDrawable.start();
+        //animationDrawable.start();
 
         cmdRing.setOnClickListener(new View.OnClickListener() {
             @Override

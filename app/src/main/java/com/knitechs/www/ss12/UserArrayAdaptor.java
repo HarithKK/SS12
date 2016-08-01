@@ -69,4 +69,9 @@ public class UserArrayAdaptor extends ArrayAdapter {
             return null;
         }
     }
+
+    @Override
+    public void notifyDataSetChanged() {
+        super.notifyDataSetChanged();
+    }
 }
